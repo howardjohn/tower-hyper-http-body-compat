@@ -37,7 +37,7 @@ where
     type Future = TowerService03ServiceAsHyper1ServiceFuture<S, R>;
 
     #[inline]
-    fn call(&mut self, req: R) -> Self::Future {
+    fn call(&self, req: R) -> Self::Future {
         TowerService03ServiceAsHyper1ServiceFuture {
             // have to drive backpressure in the future
             future: self.0.clone().oneshot(req),

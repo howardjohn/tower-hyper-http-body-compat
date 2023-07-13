@@ -136,7 +136,7 @@ where
     >;
 
     #[inline]
-    fn call(&mut self, req: Request<ReqBody>) -> Self::Future {
+    fn call(&self, req: Request<ReqBody>) -> Self::Future {
         let req = req.map(HttpBody1ToHttpBody04::new);
         TowerService03HttpServiceAsHyper1HttpServiceFuture {
             future: self.service.clone().oneshot(req),
