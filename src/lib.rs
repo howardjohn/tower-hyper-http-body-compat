@@ -99,7 +99,7 @@
 )]
 #![deny(unreachable_pub, private_in_public)]
 #![allow(elided_lifetimes_in_paths, clippy::type_complexity)]
-// #![forbid(unsafe_code)]
+#![forbid(unsafe_code)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg, doc_cfg))]
 #![cfg_attr(test, allow(clippy::float_cmp))]
 
@@ -138,9 +138,9 @@ cfg_service! {
 
 mod body;
 
-pub use body::{HttpBody04ToHttpBody1, HttpBody1ToHttpBody04};
-pub use body::{http1_request_to_http02, http1_response_to_http02};
 pub use body::{http02_request_to_http1, http02_response_to_http1};
+pub use body::{http1_request_to_http02, http1_response_to_http02};
+pub use body::{HttpBody04ToHttpBody1, HttpBody1ToHttpBody04};
 
 #[cfg(test)]
 mod tests;
